@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dy6ntcwh5vbfl"]
+
+[ext_resource type="Script" uid="uid://c05x6y5d1ef7s" path="res://src/sentence_view.gd" id="1_gt1rq"]
+
+[node name="SentenceView" type="HBoxContainer" unique_id=1346456376]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_gt1rq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=142513013]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Original" type="LineEdit" parent="VBoxContainer" unique_id=870323651]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Original"
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1766890682]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Translation" type="LineEdit" parent="VBoxContainer" unique_id=1533879777]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Translation"
+
+[node name="Delete" type="Button" parent="." unique_id=2141019405]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+text = "X"

@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bv83duu8qg6gk"]
+
+[ext_resource type="Script" uid="uid://r8uug16irn27" path="res://src/entry_widget.gd" id="1_gwpcs"]
+
+[node name="Entry" type="PanelContainer" unique_id=241905768]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+script = ExtResource("1_gwpcs")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1835215182]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer" unique_id=368656505]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+
+[node name="Text" type="Label" parent="MarginContainer/HBox" unique_id=76582829]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Kerat"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBox" unique_id=1981992528]
+layout_mode = 2
+
+[node name="Pos" type="Label" parent="MarginContainer/HBox" unique_id=1318164619]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Noun"
+
+[node name="PosSep" type="VSeparator" parent="MarginContainer/HBox" unique_id=1964001011]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Defention" type="Label" parent="MarginContainer/HBox" unique_id=1795340776]
+unique_name_in_owner = true
+layout_mode = 2
+text = "A tool. Can be both a physical tool but aso a method"
+
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBox" unique_id=1058228964]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="View" type="Button" parent="MarginContainer/HBox" unique_id=1440156622]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "View"
+
+[node name="Delete" type="Button" parent="MarginContainer/HBox" unique_id=196254811]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "X"

@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://irpnbnq0alag"]
+
+[ext_resource type="Script" uid="uid://dewh8dg68vu5i" path="res://src/entry_view.gd" id="1_ys6j5"]
+[ext_resource type="PackedScene" uid="uid://dy6ntcwh5vbfl" path="res://ui/sentence_view.tscn" id="2_sjfeq"]
+
+[node name="EntryView" type="PanelContainer" unique_id=1083448630]
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ys6j5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=78482277]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1769751454]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=21836118]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1536816809]
+layout_mode = 2
+
+[node name="Entry" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/Title" unique_id=1044406225]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "My new best word"
+alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=292650110]
+layout_mode = 2
+
+[node name="Definition" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=122771935]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+text = "My new best word"
+placeholder_text = "Defenition"
+
+[node name="Root" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=2127833528]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Root"
+
+[node name="Info" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1955344407]
+layout_mode = 2
+
+[node name="Info" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/Info" unique_id=80407951]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Pos" type="Label" parent="MarginContainer/ScrollContainer/VBox/Info/Info" unique_id=1331526634]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Noun, Verb, Adjective, Adverb"
+autowrap_mode = 3
+
+[node name="Tags" type="Label" parent="MarginContainer/ScrollContainer/VBox/Info/Info" unique_id=1258658205]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "Masculine, Second conjugation, Third declension"
+autowrap_mode = 3
+
+[node name="InfoEdit" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/Info" unique_id=123896184]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PosBtn" type="Button" parent="MarginContainer/ScrollContainer/VBox/Info/InfoEdit" unique_id=382877453]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Show PoS"
+
+[node name="TagsBtn" type="Button" parent="MarginContainer/ScrollContainer/VBox/Info/InfoEdit" unique_id=1139164375]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+toggle_mode = true
+text = "Show Tags"
+
+[node name="InfoLists" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/Info" unique_id=1831321036]
+layout_mode = 2
+
+[node name="PosList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/Info/InfoLists" unique_id=1726218181]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="TagList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/Info/InfoLists" unique_id=1002515928]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBox" unique_id=1866860370]
+layout_mode = 2
+
+[node name="SentStuff" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=237047695]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sample" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/SentStuff" unique_id=2048199509]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="Input" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample" unique_id=61905419]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="Original" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1393019572]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Sentence"
+
+[node name="Translated" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1462800840]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "Translation"
+
+[node name="Add" type="Button" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample" unique_id=195603471]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add"
+
+[node name="SentSep" type="HSeparator" parent="MarginContainer/ScrollContainer/VBox/SentStuff" unique_id=1438183057]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Sentences" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox/SentStuff" unique_id=461422070]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="SentenceView3" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=2138471568 instance=ExtResource("2_sjfeq")]
+layout_mode = 2
+
+[node name="SentenceView4" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=620659706 instance=ExtResource("2_sjfeq")]
+layout_mode = 2
+
+[node name="SentenceView5" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=1690570432 instance=ExtResource("2_sjfeq")]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=195621550]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+use_top_left = true
+
+[node name="Close" type="Button" parent="MarginContainer/CenterContainer" unique_id=882904971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "X"

@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://c7sawqk3if0ju"]
+
+[ext_resource type="Script" uid="uid://0kl6r6anuhne" path="res://src/settings.gd" id="1_7kwmf"]
+[ext_resource type="PackedScene" uid="uid://cjpluyy63x1by" path="res://ui/submit_button.tscn" id="2_pcnwc"]
+
+[node name="Settings" type="PanelContainer" unique_id=1083448630]
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7kwmf")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=78482277]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1769751454]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=21836118]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Title" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1536816809]
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/Title" unique_id=1044406225]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name of the language"
+alignment = 1
+
+[node name="InfoLists" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1831321036]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PosList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/InfoLists" unique_id=1726218181]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="TagList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/InfoLists" unique_id=1002515928]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="InfoEdit" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=123896184]
+layout_mode = 2
+
+[node name="PosBtn" parent="MarginContainer/ScrollContainer/VBox/InfoEdit" unique_id=1665145805 instance=ExtResource("2_pcnwc")]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "A new PoS"
+button_text = "Add PoS"
+delete_text = true
+
+[node name="TagBtn" parent="MarginContainer/ScrollContainer/VBox/InfoEdit" unique_id=532969375 instance=ExtResource("2_pcnwc")]
+unique_name_in_owner = true
+layout_mode = 2
+placeholder_text = "A new tag"
+button_text = "Add Tag"
+delete_text = true
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBox" unique_id=1705966720]
+layout_mode = 2
+
+[node name="CharCont" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=2071565766]
+layout_mode = 2
+
+[node name="Chars" type="Label" parent="MarginContainer/ScrollContainer/VBox/CharCont" unique_id=1165128237]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="CharBtn" parent="MarginContainer/ScrollContainer/VBox/CharCont" unique_id=1523501946 instance=ExtResource("2_pcnwc")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+placeholder_text = "A new chars"
+button_text = "Add chars"
+delete_text = true
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBox" unique_id=1162240178]
+layout_mode = 2
+text = "Hint: To delete a PoS/Tag/Char add it again but with a ~ at the beginning"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=195621550]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+use_top_left = true
+
+[node name="Close" type="Button" parent="MarginContainer/CenterContainer" unique_id=882904971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "X"

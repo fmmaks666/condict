@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://mtbvnvh5gmn8"]
+
+[ext_resource type="Script" uid="uid://kbnc1pw5dq15" path="res://src/main.gd" id="1_loxbi"]
+
+[node name="Main" type="PanelContainer" unique_id=633425107]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_loxbi")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=596204758]
+layout_mode = 2
+
+[node name="ToolBar" type="HBoxContainer" parent="VBox" unique_id=383269351]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Add" type="Button" parent="VBox/ToolBar" unique_id=259418961]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Add"
+
+[node name="Actions" type="VBoxContainer" parent="VBox/ToolBar" unique_id=346262228]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Save" type="Button" parent="VBox/ToolBar/Actions" unique_id=2035700846]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+
+[node name="HBox" type="HBoxContainer" parent="VBox/ToolBar/Actions" unique_id=362941240]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Load" type="Button" parent="VBox/ToolBar/Actions/HBox" unique_id=1022046637]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+text = "Load"
+
+[node name="New" type="Button" parent="VBox/ToolBar/Actions/HBox" unique_id=1416379400]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "New"
+
+[node name="Other" type="VBoxContainer" parent="VBox/ToolBar" unique_id=302922185]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Settings" type="Button" parent="VBox/ToolBar/Other" unique_id=20223608]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Settings"
+
+[node name="Stats" type="Button" parent="VBox/ToolBar/Other" unique_id=508716500]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Stats"
+
+[node name="About" type="Button" parent="VBox/ToolBar/Other" unique_id=1406923109]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(59, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "About ConDict"
+
+[node name="HSeparator" type="HSeparator" parent="VBox" unique_id=1241476733]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=641378701]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Search" type="LineEdit" parent="VBox/HBox" unique_id=219619864]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 6.0
+
+[node name="Enter" type="Button" parent="VBox/HBox" unique_id=398888508]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+text = "Search
+"
+
+[node name="Filter" type="Button" parent="VBox/HBox" unique_id=10360936]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Search options"
+
+[node name="Scroll" type="ScrollContainer" parent="VBox" unique_id=714677297]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Entries" type="VBoxContainer" parent="VBox/Scroll" unique_id=1734499875]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Popup" type="MarginContainer" parent="." unique_id=1576173359]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Popup" unique_id=591996616]
+layout_mode = 2
+color = Color(0, 0, 0, 0.9254902)
+
+[node name="PopupContainer" type="CenterContainer" parent="Popup" unique_id=1083944000]
+unique_name_in_owner = true
+layout_mode = 2

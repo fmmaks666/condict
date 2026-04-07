@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cjpluyy63x1by"]
 
 [ext_resource type="Script" uid="uid://b71an6roha8sg" path="res://src/submit_button.gd" id="1_p784b"]
+[ext_resource type="PackedScene" uid="uid://bb5b5dsdxihbv" path="res://ui/dict_input.tscn" id="2_tw8c8"]
 
 [node name="SubmitButton" type="HBoxContainer" unique_id=1665145805]
 custom_minimum_size = Vector2(100, 30)
@@ -12,14 +13,22 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_p784b")
 
-[node name="Input" type="LineEdit" parent="." unique_id=1261707130]
+[node name="Input" parent="." unique_id=38086836 instance=ExtResource("2_tw8c8")]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.0
+text = ""
+line_edit_alignment = 0
 
 [node name="Submit" type="Button" parent="." unique_id=1819474578]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Submit"
+
+[node name="Input1" type="LineEdit" parent="." unique_id=1261707130]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0

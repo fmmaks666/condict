@@ -18,6 +18,6 @@ func update() -> void:
 	if entry == null:
 		return
 	%Text.text = entry.text
-	%Defention.text = entry.definition
+	%Definition.text = entry.definition
 	%Pos.text = ", ".join(entry.pos)
 	%PosSep.visible = not entry.pos.is_empty()

@@ -9,6 +9,12 @@ var entry: Entry:
 		entry = e
 		update()
 
+# TODO: Get this out of here? Should I have a singleton to provide these?
+var chars: Array[String]:
+	set(c):
+		chars = c
+		update()
+
 var pos: Array[String]:
 	set(p):
 		pos = p
@@ -28,18 +34,26 @@ func  _ready() -> void:
 	%PosList.multi_selected.connect(_on_pos_list_changed)
 	%TagList.multi_selected.connect(_on_tag_list_changed)
 	%Add.pressed.connect(_on_add_pressed)
-	%Close.pressed.connect(func(): close.emit())
+	%Close.pressed.connect(func():
+		close.emit()
+		clear()
+	)
 
 func update() -> void:
 	if entry == null:
 		return
+	%Entry.chars = chars
 	%Entry.text = entry.text
 	%Definition.text = entry.definition
+	%Definition.chars = chars
 	%Root.text = entry.root
+	%Root.chars = chars
 	%PosList.clear()
 	%TagList.clear()
 	%Pos.text = ", ".join(entry.pos)
 	%Tags.text = ", ".join(entry.tags)
+	%Original.chars = chars
+	%Translated.chars = chars
 	%SentSep.visible = not entry.examples.is_empty()
 	for s in %Sentences.get_children():
 		s.queue_free()
@@ -53,6 +67,15 @@ func update() -> void:
 			%TagList.select(id, false)
 	for ex in entry.examples:
 		_add_sentence(ex)
+
+func clear() -> void:
+	%Original.text = ""
+	%Translated.text = ""
+
+func edit() -> void:
+	%Entry.get_line_edit().grab_focus()
+	%Entry.select_all()
+	%Definition.select_all()
 
 func _on_pos_list_changed(id: int, selected: bool) -> void:
 	var item: String = %PosList.get_item_text(id)
@@ -74,7 +97,10 @@ func _on_tag_list_changed(id: int, selected: bool) -> void:
 
 func _add_sentence(s: Sentence) -> SentenceView:
 	var sent: SentenceView = sentence_scene.instantiate()
+	# THIS IS BAD
 	sent.sentence = s
+	sent.chars = chars
+	sent.update()
 	sent.delete.connect(_on_sentence_delete)
 	%Sentences.add_child(sent)
 	return sent

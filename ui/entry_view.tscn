@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://irpnbnq0alag"]
 
 [ext_resource type="Script" uid="uid://dewh8dg68vu5i" path="res://src/entry_view.gd" id="1_ys6j5"]
-[ext_resource type="PackedScene" uid="uid://dy6ntcwh5vbfl" path="res://ui/sentence_view.tscn" id="2_sjfeq"]
+[ext_resource type="PackedScene" uid="uid://bb5b5dsdxihbv" path="res://ui/dict_input.tscn" id="2_2tbwy"]
 
 [node name="EntryView" type="PanelContainer" unique_id=1083448630]
-custom_minimum_size = Vector2(800, 600)
+custom_minimum_size = Vector2(600, 600)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -32,19 +32,42 @@ size_flags_vertical = 3
 [node name="Title" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1536816809]
 layout_mode = 2
 
-[node name="Entry" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/Title" unique_id=1044406225]
+[node name="Entry1" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/Title" unique_id=1044406225]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(100, 60)
 layout_mode = 2
 size_flags_horizontal = 3
 text = "My new best word"
 alignment = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBox/Title" unique_id=1410813980]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 30
+
+[node name="Entry" parent="MarginContainer/ScrollContainer/VBox/Title/MarginContainer" unique_id=38086836 instance=ExtResource("2_2tbwy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 60)
+layout_mode = 2
+text = ""
+placeholder_text = "Entry"
+line_edit_alignment = 1
+
 [node name="HBox" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=292650110]
 layout_mode = 2
 
-[node name="Definition" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=122771935]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=1188995834]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.0
+theme_override_constants/margin_left = 6
+
+[node name="Definition1" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox/MarginContainer" unique_id=122771935]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -52,12 +75,30 @@ size_flags_stretch_ratio = 8.0
 text = "My new best word"
 placeholder_text = "Defenition"
 
-[node name="Root" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=2127833528]
+[node name="Definition" parent="MarginContainer/ScrollContainer/VBox/HBox/MarginContainer" unique_id=2109191006 instance=ExtResource("2_2tbwy")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 8.0
+text = ""
+placeholder_text = "Definition"
+line_edit_alignment = 0
+
+[node name="Root1" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=2127833528]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 size_flags_horizontal = 3
 placeholder_text = "Root"
+
+[node name="Root" parent="MarginContainer/ScrollContainer/VBox/HBox" unique_id=1159055647 instance=ExtResource("2_2tbwy")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = ""
+placeholder_text = "Root"
+line_edit_alignment = 0
 
 [node name="Info" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1955344407]
 layout_mode = 2
@@ -139,15 +180,31 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 6.0
 
-[node name="Original" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1393019572]
+[node name="Original1" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1393019572]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 placeholder_text = "Sentence"
 
-[node name="Translated" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1462800840]
+[node name="Translated1" type="LineEdit" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1462800840]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 placeholder_text = "Translation"
+
+[node name="Original" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1117203447 instance=ExtResource("2_2tbwy")]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+placeholder_text = "Sentence"
+line_edit_alignment = 0
+
+[node name="Translated" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample/Input" unique_id=1537396609 instance=ExtResource("2_2tbwy")]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+placeholder_text = "Translation"
+line_edit_alignment = 0
 
 [node name="Add" type="Button" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sample" unique_id=195603471]
 unique_name_in_owner = true
@@ -163,15 +220,6 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
-
-[node name="SentenceView3" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=2138471568 instance=ExtResource("2_sjfeq")]
-layout_mode = 2
-
-[node name="SentenceView4" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=620659706 instance=ExtResource("2_sjfeq")]
-layout_mode = 2
-
-[node name="SentenceView5" parent="MarginContainer/ScrollContainer/VBox/SentStuff/Sentences" unique_id=1690570432 instance=ExtResource("2_sjfeq")]
-layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=195621550]
 layout_mode = 2

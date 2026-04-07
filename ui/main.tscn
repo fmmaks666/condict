@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://mtbvnvh5gmn8"]
 
 [ext_resource type="Script" uid="uid://kbnc1pw5dq15" path="res://src/main.gd" id="1_loxbi"]
+[ext_resource type="PackedScene" uid="uid://bb5b5dsdxihbv" path="res://ui/dict_input.tscn" id="2_vcrq8"]
 
 [node name="Main" type="PanelContainer" unique_id=633425107]
 anchors_preset = 15
@@ -97,12 +98,22 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="Search" type="LineEdit" parent="VBox/HBox" unique_id=219619864]
+[node name="Search1" type="LineEdit" parent="VBox/HBox" unique_id=219619864]
 unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 6.0
+
+[node name="Search" parent="VBox/HBox" unique_id=38086836 instance=ExtResource("2_vcrq8")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_stretch_ratio = 6.0
+text = ""
+placeholder_text = "Search"
+line_edit_alignment = 0
 
 [node name="Enter" type="Button" parent="VBox/HBox" unique_id=398888508]
 unique_name_in_owner = true
@@ -137,6 +148,15 @@ layout_mode = 2
 layout_mode = 2
 color = Color(0, 0, 0, 0.9254902)
 
-[node name="PopupContainer" type="CenterContainer" parent="Popup" unique_id=1083944000]
+[node name="PopupContainer1" type="CenterContainer" parent="Popup" unique_id=1083944000]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="PopupContainer" type="MarginContainer" parent="Popup" unique_id=179711371]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48

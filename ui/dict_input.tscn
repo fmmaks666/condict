@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bb5b5dsdxihbv"]
+
+[ext_resource type="Script" uid="uid://dmoyjc5j3pjjs" path="res://src/dict_input.gd" id="1_sjxjh"]
+
+[node name="DictInput" type="HBoxContainer" unique_id=38086836]
+offset_right = 89.0
+offset_bottom = 31.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+script = ExtResource("1_sjxjh")
+text = null
+line_edit_alignment = null
+
+[node name="Input" type="LineEdit" parent="." unique_id=726111876]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+placeholder_text = "Search"
+
+[node name="CharsBtn" type="Button" parent="." unique_id=739760833]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+focus_mode = 1
+text = "+"
+
+[node name="Popup" type="PopupPanel" parent="CharsBtn" unique_id=317968119]
+unique_name_in_owner = true
+oversampling_override = 1.0
+position = Vector2i(0, 31)
+size = Vector2i(89, 100)
+
+[node name="MarginContainer" type="MarginContainer" parent="CharsBtn/Popup" unique_id=122598694]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 85.0
+offset_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CharsBtn/Popup/MarginContainer" unique_id=1394197941]
+layout_mode = 2
+
+[node name="Chars" type="HFlowContainer" parent="CharsBtn/Popup/MarginContainer/ScrollContainer" unique_id=448906230]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

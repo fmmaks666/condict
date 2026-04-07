@@ -19,7 +19,7 @@ func  _ready() -> void:
 					dict.chars.erase(chr.strip_edges())
 			else:
 				for chr in chars.split(" "):
-					if not chr.strip_edges().is_empty():
+					if not chr.strip_edges().is_empty() and chr not in dict.chars:
 						dict.chars.append(chr.strip_edges())
 			update()
 	)
@@ -32,6 +32,8 @@ func update() -> void:
 	if dict == null:
 		return
 	%Name.text = dict.language
+	%PosBtn.chars = dict.chars
+	%TagBtn.chars = dict.chars
 	%PosList.clear()
 	%TagList.clear()
 	for p in dict.pos:

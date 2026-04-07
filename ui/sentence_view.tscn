@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dy6ntcwh5vbfl"]
 
 [ext_resource type="Script" uid="uid://c05x6y5d1ef7s" path="res://src/sentence_view.gd" id="1_gt1rq"]
+[ext_resource type="PackedScene" uid="uid://bb5b5dsdxihbv" path="res://ui/dict_input.tscn" id="2_el2dy"]
 
 [node name="SentenceView" type="HBoxContainer" unique_id=1346456376]
 anchors_preset = 10
@@ -15,19 +16,35 @@ script = ExtResource("1_gt1rq")
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Original" type="LineEdit" parent="VBoxContainer" unique_id=870323651]
+[node name="Original1" type="LineEdit" parent="VBoxContainer" unique_id=870323651]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 placeholder_text = "Original"
+
+[node name="Original" parent="VBoxContainer" unique_id=38086836 instance=ExtResource("2_el2dy")]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+placeholder_text = "Original"
+line_edit_alignment = 0
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1766890682]
 layout_mode = 2
 theme_override_constants/separation = 2
 
-[node name="Translation" type="LineEdit" parent="VBoxContainer" unique_id=1533879777]
+[node name="Translation1" type="LineEdit" parent="VBoxContainer" unique_id=1533879777]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 placeholder_text = "Translation"
+
+[node name="Translation" parent="VBoxContainer" unique_id=900735348 instance=ExtResource("2_el2dy")]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+placeholder_text = "Translation"
+line_edit_alignment = 0
 
 [node name="Delete" type="Button" parent="." unique_id=2141019405]
 unique_name_in_owner = true

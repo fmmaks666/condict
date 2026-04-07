@@ -7,6 +7,9 @@ var settings_scene := preload("res://ui/settings.tscn")
 var settings: Settings
 var about_scene := preload("res://ui/about.tscn")
 var about: About
+var stats_scene := preload("res://ui/stats.tscn")
+var stats: Stats
+
 
 
 var dict: Dict:
@@ -22,6 +25,7 @@ func _ready() -> void:
 	%Search.text_submitted.connect(func(_text: String): %Enter.pressed.emit())
 	%Enter.pressed.connect(_on_enter_pressed)
 	%Settings.pressed.connect(func(): if settings != null: _show_popup(settings))
+	%Stats.pressed.connect(func(): if stats != null: _show_popup(stats))
 	%About.pressed.connect(func(): if about != null: _show_popup(about))
 	
 	var ev: EntryView = entry_view_scene.instantiate()
@@ -39,13 +43,21 @@ func _ready() -> void:
 	ab.hide()
 	ab.close.connect(func(): _hide_popup(about))
 	%PopupContainer.add_child(ab)
+	var st: Stats = stats_scene.instantiate()
+	stats = st
+	st.hide()
+	st.close.connect(func(): _hide_popup(stats))
+	%PopupContainer.add_child(st)
 
 func update() -> void:
 	if dict == null:
 		return
+	%Search.chars = dict.chars
 	entry_view.pos = dict.pos
 	entry_view.tags = dict.tags
+	entry_view.chars = dict.chars
 	settings.dict = dict
+	stats.dict = dict
 	# Do I need this?
 	for c in %Entries.get_children():
 		#if (c is EntryWidget):
@@ -60,11 +72,11 @@ func update() -> void:
 func _on_add_pressed() -> void:
 	if dict == null:
 		return
-	var entry := Entry.new("New word", "New defenition")
+	var entry := Entry.new("New word", "New definition")
 	dict.entries.append(entry)
 	var e := _add_entry(entry)
 	var vs: VScrollBar = %Scroll.get_v_scroll_bar()
-	_on_entry_view(entry, e)
+	_on_entry_view(entry, e, true)
 	await entry_view.close
 	vs.value = vs.max_value - vs.page
 
@@ -116,8 +128,10 @@ func _on_enter_pressed() -> void:
 			else:
 				c.show()
 
-func _on_entry_view(it: Entry, widget: EntryWidget) -> void:
+func _on_entry_view(it: Entry, widget: EntryWidget, is_new: bool = false) -> void:
 	_open_entry(it)
+	if is_new:
+		entry_view.edit()
 	# NOTE: This is a little bit shaky but it works
 	await entry_view.close
 	widget.update()

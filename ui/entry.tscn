@@ -41,7 +41,7 @@ text = "Noun"
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Defention" type="Label" parent="MarginContainer/HBox" unique_id=1795340776]
+[node name="Definition" type="Label" parent="MarginContainer/HBox" unique_id=1795340776]
 unique_name_in_owner = true
 layout_mode = 2
 text = "A tool. Can be both a physical tool but aso a method"

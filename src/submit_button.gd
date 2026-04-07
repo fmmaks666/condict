@@ -11,16 +11,22 @@ var placeholder_text: String:
 		%Input.placeholder_text = s
 
 @export
-var button_text: String:
-	get:
-		return %Submit.text
+var button_text: String: 
 	set(s):
-		%Submit.text = s
+		button_text = s
+		if is_node_ready():
+			%Submit.text = s
 
 @export
 var delete_text: bool = false
 
+var chars: Array[String]:
+	set(c):
+		chars = c
+		update()
+
 func _ready() -> void:
+	%Submit.text = button_text
 	%Submit.pressed.connect(func():
 		submitted.emit(%Input.text)
 		if delete_text:
@@ -31,6 +37,11 @@ func _ready() -> void:
 		if delete_text:
 			%Input.text = ""
 	)
+
+func update() -> void:
+	if chars == null:
+		return
+	%Input.chars = chars
 
 func get_line_edit() -> LineEdit:
 	return %Input

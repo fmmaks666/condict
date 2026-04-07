@@ -13,7 +13,6 @@ func  _ready() -> void:
 func update() -> void:
 	if dict == null:
 		return
-	print("Allah 'akbar")
 	%Name.text = dict.language
 	var stats = """
 	Has %d entries

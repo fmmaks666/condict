@@ -111,9 +111,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_stretch_ratio = 6.0
-text = ""
 placeholder_text = "Search"
-line_edit_alignment = 0
 
 [node name="Enter" type="Button" parent="VBox/HBox" unique_id=398888508]
 unique_name_in_owner = true

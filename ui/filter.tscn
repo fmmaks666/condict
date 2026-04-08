@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://cshenlld5lk34"]
+
+[ext_resource type="Script" uid="uid://5fgxd3hy56kn" path="res://src/filter_view.gd" id="1_em6s8"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_em6s8"]
+
+[node name="Filter" type="PanelContainer" unique_id=1083448630]
+custom_minimum_size = Vector2(800, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_em6s8")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=78482277]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer" unique_id=1769751454]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/ScrollContainer" unique_id=21836118]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Where" type="VBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=2071565766]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/Where" unique_id=1389391674]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBox/Where/HBox" unique_id=2119744159]
+layout_mode = 2
+text = "Search in"
+
+[node name="Entry" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox" unique_id=1738548742]
+layout_mode = 2
+button_pressed = true
+text = "Entries"
+
+[node name="Definition" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox" unique_id=1382733312]
+layout_mode = 2
+text = "Definitions"
+
+[node name="Root" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox" unique_id=275078894]
+layout_mode = 2
+text = "Roots"
+
+[node name="HBox2" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/Where" unique_id=1451357233]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/ScrollContainer/VBox/Where/HBox2" unique_id=297943781]
+layout_mode = 2
+text = "Match"
+
+[node name="All" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox2" unique_id=363633176]
+layout_mode = 2
+button_pressed = true
+button_group = SubResource("ButtonGroup_em6s8")
+text = "All"
+
+[node name="Definition" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox2" unique_id=784717170]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_em6s8")
+text = "Prefix"
+
+[node name="Root" type="CheckBox" parent="MarginContainer/ScrollContainer/VBox/Where/HBox2" unique_id=1093659042]
+layout_mode = 2
+button_group = SubResource("ButtonGroup_em6s8")
+text = "Suffix"
+
+[node name="InfoLists" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=1831321036]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PosList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/InfoLists" unique_id=1726218181]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="TagList" type="ItemList" parent="MarginContainer/ScrollContainer/VBox/InfoLists" unique_id=1002515928]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+select_mode = 2
+
+[node name="InfoEdit" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox" unique_id=123896184]
+layout_mode = 2
+
+[node name="Pos" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/InfoEdit" unique_id=126374201]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AllPos" type="Button" parent="MarginContainer/ScrollContainer/VBox/InfoEdit/Pos" unique_id=1442348938]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select all PoS"
+
+[node name="NonePos" type="Button" parent="MarginContainer/ScrollContainer/VBox/InfoEdit/Pos" unique_id=1161173774]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Deselect all PoS"
+
+[node name="Tags" type="HBoxContainer" parent="MarginContainer/ScrollContainer/VBox/InfoEdit" unique_id=774022209]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AllTags" type="Button" parent="MarginContainer/ScrollContainer/VBox/InfoEdit/Tags" unique_id=591778611]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Select all tags"
+
+[node name="NoneTags" type="Button" parent="MarginContainer/ScrollContainer/VBox/InfoEdit/Tags" unique_id=1937477471]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Deselect all tags"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBox" unique_id=1705966720]
+layout_mode = 2
+
+[node name="Default" type="Button" parent="MarginContainer/ScrollContainer/VBox" unique_id=197845974]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Default"
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer" unique_id=195621550]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+use_top_left = true
+
+[node name="Close" type="Button" parent="MarginContainer/CenterContainer" unique_id=882904971]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "X"
